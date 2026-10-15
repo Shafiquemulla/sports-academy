@@ -42,21 +42,16 @@ npm install
 npm run dev
 ```
 
-Open the local URL shown in your terminal, usually `http://localhost:5173`.
+Open the local URL shown in your terminal.
 
 ### Production Build
 
 ```bash
 npm run build
+npm run preview
 ```
 
 The production-ready files will be generated in the `dist/` directory.
-
-To preview the production build locally:
-
-```bash
-npm run preview
-```
 
 ## 📁 Project Structure
 
@@ -86,7 +81,7 @@ Update the CSS variables in `src/index.css` to customize the theme.
 
 ## 📝 Customization
 
-Update the following files to customize the website:
+Update the following files to customize the website, if they exist in your project:
 
 - `src/data/programs.js` — coaching programs
 - `src/data/coaches.js` — coach details
@@ -109,7 +104,7 @@ The project includes SEO metadata and structured data intended to help search en
 
 ## ⚠️ Important Notes
 
-- Coach profiles, testimonials, and statistics may contain demo data. Verify them before publishing.
+- Verify coach profiles, testimonials, and statistics before publishing.
 - Replace placeholder video URLs with valid YouTube embed URLs.
 - Replace sample images with genuine academy photos where possible.
 - The contact form requires a backend or email service to deliver messages. Client-side validation alone does not send emails.
