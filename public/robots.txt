@@ -1,0 +1,9 @@
+# Robots.txt for Sports Academy Bandra
+# https://sportsacademybandra.com/
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://sportsacademybandra.com/sitemap.xml
+

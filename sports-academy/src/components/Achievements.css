@@ -1,0 +1,288 @@
+/* ============================================================
+   Achievements.css – Premium Cricket Academy Statistics
+   ============================================================ */
+
+.achievements-section {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background: #050505;
+}
+
+/* Background image with dark overlay */
+.achievements-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    url('https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?w=1920&h=800&fit=crop') center/cover no-repeat;
+  z-index: 0;
+}
+
+.achievements-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(5, 5, 5, 0.95) 0%, rgba(11, 26, 20, 0.92) 50%, rgba(5, 5, 5, 0.96) 100%);
+}
+
+/* Demo note */
+.stats-demo-note {
+  font-size: 0.75rem;
+  color: #B8C2BC;
+  font-style: italic;
+  margin-top: 0.75rem;
+  text-align: center;
+  opacity: 0.6;
+}
+
+/* ── Stats Grid ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  background: #0B1A14;
+  border: 1px solid rgba(25, 164, 99, 0.2);
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* ── Stat Item ── */
+.stat-item {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid rgba(25, 164, 99, 0.15);
+  transition: background 0.3s;
+  position: relative;
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-item:hover {
+  background: rgba(25, 164, 99, 0.08);
+}
+
+.stat-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #19A463;
+  transition: width 0.4s;
+}
+
+.stat-item:hover::after { width: 60%; }
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.stat-number {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stat-suffix {
+  font-size: 0.7em;
+  color: #D4AF37;
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.stat-desc {
+  font-size: 0.72rem;
+  color: #B8C2BC;
+}
+
+/* ── Milestones Timeline ── */
+.milestones {
+  text-align: center;
+}
+
+.milestones-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 2.5rem;
+}
+
+.milestone-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+}
+
+/* Horizontal line connecting milestones */
+.milestone-list::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(25, 164, 99, 0.4), transparent);
+}
+
+.milestone-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1.5rem;
+  flex: 1;
+  min-width: 120px;
+  position: relative;
+}
+
+.milestone-year {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #19A463;
+  margin-bottom: 0.25rem;
+}
+
+.milestone-dot {
+  width: 12px;
+  height: 12px;
+  background: #19A463;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(25, 164, 99, 0.6);
+  flex-shrink: 0;
+}
+
+.milestone-event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.milestone-icon {
+  font-size: 1.25rem;
+}
+
+.milestone-event span:last-child {
+  font-size: 0.75rem;
+  color: #B8C2BC;
+  max-width: 120px;
+  line-height: 1.4;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .stat-item { border-bottom: 1px solid rgba(25, 164, 99, 0.15); }
+  .stat-item:nth-child(3n) { border-right: none; }
+  .milestone-list::before { display: none; }
+}
+
+@media (max-width: 768px) {
+  .achievements-section { padding: 70px 0; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2n) { border-right: none; }
+  .milestone-item { min-width: 0; padding: 0 0.5rem; }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 16px;
+  }
+  .stat-item {
+    padding: 1.25rem 0.5rem;
+  }
+  .stat-number {
+    font-size: 1.6rem;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  .stat-desc {
+    display: none;
+  }
+  .milestones-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.75rem;
+  }
+  .milestone-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+    padding: 0;
+  }
+  .milestone-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    gap: 0.65rem;
+  }
+  .milestone-year {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    min-width: 42px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .milestone-dot {
+    margin: 0;
+  }
+  .milestone-event {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: left;
+    margin-top: 0;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .milestone-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .milestone-event span:last-child {
+    max-width: none;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 360px) {
+  .stat-item {
+    padding: 1rem 0.35rem;
+  }
+  .stat-number {
+    font-size: 1.4rem;
+  }
+  .milestone-event span:last-child {
+    font-size: 0.76rem;
+  }
+}

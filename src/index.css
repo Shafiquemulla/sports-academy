@@ -1,0 +1,403 @@
+/* ============================================================
+   GLOBAL CSS – Sports Academy Bandra (Dedicated Cricket Academy)
+   Theme: Luxury Dark Cricket Aesthetic
+   Palette:
+     - Primary background: #050505 (deep black)
+     - Secondary background: #0B1A14 (very dark green)
+     - Primary cricket green: #0B6B3A
+     - Bright accent green: #19A463
+     - Gold accent: #D4AF37
+     - Main text: #FFFFFF
+     - Secondary text: #B8C2BC
+     - Borders: subtle dark green/gray
+   ============================================================ */
+
+:root {
+  /* === Backgrounds === */
+  --bg-primary: #050505;          /* Deep Black */
+  --bg-secondary: #0B1A14;        /* Very Dark Green */
+  --bg-darker: #020403;
+  --bg-card: #0A1410;            /* Dark Charcoal/Green */
+  --bg-card-hover: #0F1E19;      /* Elevated Dark Green */
+  --bg-card-alt: #08110D;
+  --bg-surface: rgba(11, 26, 20, 0.7);
+
+  /* === Cricket Greens === */
+  --green-primary: #0B6B3A;      /* Primary Cricket Green */
+  --green-accent: #19A463;       /* Bright Accent Green */
+  --green-light: #2DD482;
+  --green-glow: rgba(25, 164, 99, 0.35);
+  --green-glow-subtle: rgba(11, 107, 58, 0.2);
+
+  /* === Gold Accents (Subtle Luxury Highlights) === */
+  --gold-accent: #D4AF37;        /* Metallic Gold Accent */
+  --gold-light: #E5C358;
+  --gold-glow: rgba(212, 175, 55, 0.25);
+
+  /* === Typography Colors === */
+  --text-primary: #FFFFFF;       /* Main text */
+  --text-secondary: #B8C2BC;     /* Secondary text */
+  --text-muted: #8A968F;         /* Muted annotations */
+  --text-accent: #19A463;        /* Green highlight text */
+  --text-gold: #D4AF37;          /* Small gold highlights */
+
+  /* === Borders === */
+  --border-subtle: rgba(184, 194, 188, 0.12);
+  --border-green: rgba(25, 164, 99, 0.28);
+  --border-green-hover: rgba(25, 164, 99, 0.6);
+  --border-gold: rgba(212, 175, 55, 0.35);
+
+  /* === Gradients (Minimal & Subtle - Luxury) === */
+  --gradient-bg: linear-gradient(180deg, #050505 0%, #0B1A14 50%, #050505 100%);
+  --gradient-card: linear-gradient(150deg, #0A1410 0%, #060E0A 100%);
+  --gradient-btn: linear-gradient(135deg, #0B6B3A 0%, #19A463 100%);
+  --gradient-btn-hover: linear-gradient(135deg, #19A463 0%, #2DD482 100%);
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%);
+
+  /* === Shadows === */
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.7);
+  --shadow-green: 0 8px 30px rgba(25, 164, 99, 0.22);
+  --shadow-green-strong: 0 12px 40px rgba(25, 164, 99, 0.4);
+  --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.2);
+
+  /* === Layout & Dimensions === */
+  --section-padding: 100px 0;
+  --container-max: 1280px;
+  --gap: 2rem;
+
+  /* === Transitions === */
+  --transition: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+
+  /* === Border Radius === */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+}
+
+/* === RESET & BASE === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--bg-primary);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure sticky header does not overlap section headers on scroll */
+section[id],
+div[id] {
+  scroll-margin-top: 80px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  touch-action: manipulation;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  max-width: 100%;
+}
+
+/* === CONTAINER === */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+/* === SECTION HEADER === */
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(11, 107, 58, 0.25);
+  color: var(--green-accent);
+  border: 1px solid var(--border-green);
+  padding: 0.45rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 4.5vw, 3.1rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+}
+
+.section-title span {
+  color: var(--green-accent);
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* === BUTTONS === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 46px;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Strong Primary Cricket Green CTA Button */
+.btn-primary {
+  background: var(--gradient-btn);
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px var(--green-glow);
+}
+
+.btn-primary:hover {
+  background: var(--gradient-btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--green-glow-subtle);
+  color: #FFFFFF;
+}
+
+/* Secondary CTA: Dark/Transparent with subtle border */
+.btn-outline,
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-subtle);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover,
+.btn-secondary:hover {
+  background: rgba(25, 164, 99, 0.12);
+  border-color: var(--green-accent);
+  color: var(--green-accent);
+  transform: translateY(-2px);
+}
+
+/* === CARD BASE === */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--border-green-hover);
+  box-shadow: var(--shadow-green);
+  transform: translateY(-5px);
+}
+
+/* === GRID UTILITIES === */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap); }
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--green-primary); border-radius: 3px; }
+
+/* === SECTION DIVIDER === */
+.section-divider {
+  width: 50px;
+  height: 3px;
+  background: var(--green-accent);
+  border-radius: 2px;
+  margin: 0.85rem auto 1.25rem;
+}
+
+/* === ANIMATIONS & VISIBILITY === */
+.animate-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* === SECTION SPACING === */
+.section {
+  padding: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+}
+
+/* === RESPONSIVE BREAKPOINTS === */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  :root { --section-padding: 70px 0; }
+  section[id],
+  div[id] {
+    scroll-margin-top: 68px;
+  }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .container { padding: 0 1.25rem; }
+  .section-header { margin-bottom: 2.5rem; }
+  .section-title { font-size: clamp(1.7rem, 6vw, 2.3rem); }
+  .section-subtitle { font-size: 0.95rem; line-height: 1.65; }
+}
+
+@media (max-width: 480px) {
+  :root { --section-padding: 50px 0; }
+  .container { padding: 0 1rem; }
+  .section-header { margin-bottom: 2rem; }
+  .btn {
+    padding: 0.75rem 1.4rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+    white-space: normal;
+    text-align: center;
+  }
+  .section-badge {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.8px;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .section-title {
+    font-size: clamp(1.5rem, 7vw, 1.95rem);
+    letter-spacing: -0.3px;
+  }
+  .section-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 360px) {
+  .container { padding: 0 0.75rem; }
+  .section-title { font-size: 1.45rem; }
+  .btn { padding: 0.7rem 1rem; font-size: 0.85rem; }
+}
+
+@media (max-width: 320px) {
+  .container { padding: 0 0.6rem; }
+  .section-title { font-size: 1.35rem; }
+}
+
+/* === ACCESSIBILITY: SKIP LINK === */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  background: var(--green-accent);
+  color: #050505;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: var(--radius-sm);
+  z-index: 99999;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 20px;
+  outline: 3px solid var(--gold-accent);
+}
+
+/* === ACCESSIBILITY: FOCUS VISIBLE === */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--green-accent);
+  outline-offset: 3px;
+}
+
+/* === ACCESSIBILITY: PREFERS REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

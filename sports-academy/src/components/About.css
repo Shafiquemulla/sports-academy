@@ -1,0 +1,241 @@
+/* ============================================================
+   About.css – Premium Cricket Academy About Section
+   ============================================================ */
+
+.about-section {
+  padding: 100px 0;
+  background: #050505;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(25, 164, 99, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(25, 164, 99, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ── Main Layout ── */
+.about-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+/* ── Image Column ── */
+.about-image-col {
+  position: relative;
+}
+
+.about-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: visible;
+}
+
+.about-main-image {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid rgba(25, 164, 99, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+
+/* Floating stats badge on the image */
+.about-image-badge {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  background: #0B1A14;
+  border: 1px solid rgba(25, 164, 99, 0.4);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.badge-number {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #D4AF37;
+  line-height: 1;
+}
+
+.badge-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #B8C2BC;
+  text-align: center;
+  line-height: 1.3;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
+
+/* Decorative accent box behind image */
+.about-image-accent {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(25, 164, 99, 0.25);
+  border-radius: 20px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Text Column ── */
+.about-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about-text-col .section-badge {
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.about-heading {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.about-para {
+  font-size: 1rem;
+  color: #B8C2BC;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.about-btn-outline {
+  color: #FFFFFF !important;
+  border-color: rgba(184, 194, 188, 0.3) !important;
+  background: rgba(11, 26, 20, 0.6) !important;
+}
+
+.about-btn-outline:hover {
+  background: rgba(25, 164, 99, 0.15) !important;
+  border-color: #19A463 !important;
+  color: #FFFFFF !important;
+}
+
+/* ── Feature Cards Grid ── */
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: #0B1A14;
+  border: 1px solid rgba(25, 164, 99, 0.18);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(25, 164, 99, 0.08), transparent);
+  opacity: 0;
+  transition: opacity 0.35s;
+  border-radius: 16px;
+}
+
+.feature-card:hover {
+  border-color: rgba(25, 164, 99, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(25, 164, 99, 0.15);
+  transform: translateY(-5px);
+}
+
+.feature-card:hover::before { opacity: 1; }
+
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.6rem;
+}
+
+.feature-desc {
+  font-size: 0.875rem;
+  color: #B8C2BC;
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .about-features { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .about-main {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .about-image-badge {
+    bottom: -16px;
+    right: -10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section { padding: 70px 0; }
+  .about-features { grid-template-columns: 1fr; }
+  .about-main { gap: 3rem; margin-bottom: 4rem; }
+  .about-main-image { height: 300px; }
+}
+
+@media (max-width: 480px) {
+  .about-cta { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+  .about-cta .btn { width: 100%; text-align: center; }
+  .about-image-accent { display: none; }
+  .about-image-badge {
+    bottom: -10px;
+    right: 10px;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+  }
+  .badge-number { font-size: 1.75rem; }
+  .badge-text { font-size: 0.7rem; }
+  .about-main-image { height: 260px; }
+  .feature-card { padding: 1.25rem; }
+}

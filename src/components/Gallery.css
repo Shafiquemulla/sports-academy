@@ -1,0 +1,278 @@
+/* ============================================================
+   Gallery.css – Cricket Photo Gallery
+   Sports Academy Bandra – Luxury Dark Cricket Theme
+   ============================================================ */
+
+.gallery-section {
+  padding: 100px 0;
+  background: #050505;
+}
+
+/* ── Filter ── */
+.gallery-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+/* ── Gallery Grid ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Gallery Item ── */
+.gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #0B1A14;
+  border: 1px solid rgba(25, 164, 99, 0.16);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  border-color: #19A463;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(25, 164, 99, 0.2);
+}
+
+.gallery-img-btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #0B1A14;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  text-align: left;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  background: #0B1A14;
+}
+
+.gallery-img-btn:hover .gallery-img {
+  transform: scale(1.08);
+}
+
+/* Overlay: Always visible at bottom for mobile & clear title readability */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5, 5, 5, 0.95) 0%,
+    rgba(5, 5, 5, 0.5) 40%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  transition: background 0.3s ease;
+}
+
+.gallery-img-btn:hover .gallery-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(5, 5, 5, 0.98) 0%,
+    rgba(5, 5, 5, 0.6) 50%,
+    rgba(25, 164, 99, 0.15) 100%
+  );
+}
+
+.gallery-overlay-icon {
+  font-size: 1.75rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.3s ease;
+}
+
+.gallery-img-btn:hover .gallery-overlay-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery-overlay-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.gallery-img-category {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  color: #19A463;
+  font-weight: 700;
+  background: rgba(25, 164, 99, 0.15);
+  border: 1px solid rgba(25, 164, 99, 0.35);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.gallery-img-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+/* Empty State */
+.gallery-empty {
+  text-align: center;
+  padding: 4rem;
+  color: #B8C2BC;
+  font-size: 1rem;
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(5, 5, 5, 0.97);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(25, 164, 99, 0.3);
+}
+
+.lightbox-caption {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #B8C2BC;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lightbox-caption strong { color: #fff; }
+.lightbox-caption span { color: #19A463; font-weight: 600; }
+.lightbox-count { color: #D4AF37; font-weight: 700; }
+
+/* Close Button */
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(184, 194, 188, 0.2);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.lightbox-close:hover {
+  background: rgba(25, 164, 99, 0.3);
+  border-color: #19A463;
+}
+
+/* Nav Buttons */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(184, 194, 188, 0.2);
+  color: #fff;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10000;
+  line-height: 1;
+}
+
+.lightbox-prev { left: 1.5rem; }
+.lightbox-next { right: 1.5rem; }
+
+.lightbox-nav:hover {
+  background: rgba(25, 164, 99, 0.3);
+  border-color: #19A463;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .gallery-section { padding: 70px 0; }
+  .gallery-filter { gap: 0.45rem; margin-bottom: 2rem; }
+  .gallery-filter .filter-btn { padding: 0.45rem 0.95rem; font-size: 0.82rem; min-height: 38px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .lightbox-nav { width: 44px; height: 44px; font-size: 1.5rem; }
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
+  .lightbox-close { top: 1rem; right: 1rem; width: 44px; height: 44px; }
+  .lightbox-img { max-height: 70vh; }
+}
+
+@media (max-width: 480px) {
+  .gallery-section { padding: 50px 0; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+  .gallery-img-title { font-size: 0.82rem; }
+  .gallery-img-category { font-size: 0.65rem; padding: 0.15rem 0.5rem; }
+  .gallery-overlay { padding: 0.75rem; }
+  .lightbox-caption { font-size: 0.82rem; text-align: center; padding: 0 0.5rem; }
+}
+
+@media (max-width: 360px) {
+  .gallery-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+  .gallery-img-title { font-size: 0.92rem; }
+  .gallery-img-category { font-size: 0.7rem; }
+  .gallery-overlay { padding: 1rem; }
+}

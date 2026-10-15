@@ -1,0 +1,207 @@
+/* ============================================================
+   Coaches.css – Premium Cricket Faculty Cards
+   ============================================================ */
+
+.coaches-section {
+  padding: 100px 0;
+  background: #050505;
+  position: relative;
+}
+
+.coaches-demo-note {
+  font-size: 0.78rem;
+  color: #B8C2BC;
+  font-style: italic;
+  margin-top: 0.75rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* ── Coaches Grid ── */
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* ── Coach Card ── */
+.coach-card {
+  background: #0B1A14;
+  border: 1px solid rgba(25, 164, 99, 0.16);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.coach-card:hover {
+  border-color: #19A463;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.75), 0 0 25px rgba(25, 164, 99, 0.25);
+  transform: translateY(-6px);
+}
+
+/* Coach Image with Overlay */
+.coach-image-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.coach-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.coach-card:hover .coach-image {
+  transform: scale(1.08);
+}
+
+/* Hover Overlay */
+.coach-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(5, 5, 5, 0.94), rgba(11, 107, 58, 0.4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 1.25rem;
+}
+
+.coach-card:hover .coach-overlay { opacity: 1; }
+
+.coach-overlay-content {
+  text-align: center;
+}
+
+.coach-bio-overlay {
+  font-size: 0.825rem;
+  color: #FFFFFF;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.coach-certs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.cert-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #D4AF37;
+  border-radius: 999px;
+}
+
+/* Coach Info */
+.coach-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.coach-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.coach-role {
+  font-size: 0.85rem;
+  color: #D4AF37;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.coach-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.coach-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: #B8C2BC;
+}
+
+.coach-meta-icon { font-size: 0.9rem; }
+
+.coach-achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(25, 164, 99, 0.15);
+}
+
+.coach-achievement {
+  font-size: 0.78rem;
+  color: #B8C2BC;
+  opacity: 0.8;
+}
+
+/* ── Join Banner ── */
+.coaches-join-banner {
+  background: linear-gradient(135deg, #0B1A14, #050505);
+  border: 1px solid rgba(25, 164, 99, 0.25);
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.join-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.join-banner-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.join-banner-desc {
+  color: #B8C2BC;
+  font-size: 0.95rem;
+  max-width: 500px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .coaches-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .coaches-section { padding: 70px 0; }
+  .coaches-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .join-banner-content { flex-direction: column; align-items: stretch; gap: 1.5rem; }
+  .coaches-join-banner { padding: 2rem; }
+  .join-banner-content .btn { width: 100%; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .coaches-join-banner { padding: 1.5rem 1.25rem; border-radius: 16px; }
+  .join-banner-title { font-size: 1.25rem; }
+  .coach-info { padding: 1.25rem 1rem; }
+  .coach-image-wrap { height: 220px; }
+}
